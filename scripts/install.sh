@@ -11,13 +11,13 @@ pip install openai
 # -------------------------- For DEVA -------------------------
 cd submodules/Tracking-Anything-with-DEVA
 pip install -e .
-cd ..
+cd ../..
 
 # -------------------------- For Grounded-SAM-2 -------------------------
 cd submodules/Grounded-SAM-2
 pip install -e .
-pip install --no-build-isolation -e grounding_dino
-cd ..
+pip install --no-build-isolation "git+https://github.com/IDEA-Research/GroundingDINO.git" -v
+cd ../..
 
 # -------------------------- For Unidepth-------------------------
 cd submodules/UniDepth
@@ -27,7 +27,7 @@ pip install wandb
 pip install xformers==0.0.29
 wget https://raw.githubusercontent.com/AbdBarho/xformers-wheels/refs/heads/main/xformers/components/attention/nystrom.py -O ./unidepth/layers/nystrom.py  # To ensure compatibility of pytorch 2.5.1
 sed -i 's/from xformers\.components\.attention import NystromAttention/from .nystrom import NystromAttention/g' unidepth/layers/nystrom_attention.py
-cd ..
+cd ../..
 
 # -------------------------- For TrackingWorld -------------------------
 
